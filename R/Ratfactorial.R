@@ -1,0 +1,13 @@
+#' Effect of a protein on weight gain in rats
+#' 
+#' The Ratfactorial dataset contains data from an experiment to study the effect of six different diets on the gain in weight of rats. Each diet was at either high or low protein (factor Amount), and the protein was derived from either beef, cereal or pork (factor Source). A completely randomized design was used, with 60 rats allocated at random, 10 to each treatment.
+#' @format 
+#' \describe{A data frame with 60 observations on the following three variables:
+#' 
+#' \item{Source}{a factor specifying the source of the protein fed to each rat.}
+#' \item{Amount}{a factor specifying the amount of protein fed to each rat.}
+#' \item{Gain}{a numerical vector recording the gain in weight of each rat.}
+#' }
+#' @source 
+#' Snedecor, G.W. & Cochran, W.G. (1989) Statistical Methods (8th Edition), page 305.
+"Ratfactorial"

@@ -1,0 +1,18 @@
+#' Lattice design for a variety trial of soybeans
+#' 
+#' This partially balanced lattice design can be used to illustrate the use of pseudo-factors in msanova. It has a single treatment factor, variety of soybeans, with number of levels equal to the square of an integer k; here k=5. To form the design, this factor is arbitrarily represented as the factorial combinations of two pseudo-factors, here called A and B, each with k levels. A is confounded in the first replicate, and B is confounded in the second replicate. The response variable is the yield.
+#' @format 
+#' \describe{A data frame with 32 observations on the following six variables:
+#' 
+#' \item{Rep}{a factor specifying the replicates.}
+#' \item{Block}{a factor specifying the blocks within replicates.}
+#' \item{Plot}{a factor specifying plots within blocks.}
+#' \item{A}{a factor specifying the confounding of variety effects in replicate 1.}
+#' \item{B}{a factor specifying the confounding of variety effects in replicate 2.}
+#' \item{Variety}{a factor specifying the varieties.}
+#' \item{Yield}{a numerical vector recording the yields.}
+#' 
+#' }
+#' @source 
+#' Cochran, W.G. & Cox, G.M. (1957). Experimental Designs (2nd edition), page 406.
+"Lattice"
