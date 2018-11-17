@@ -38,10 +38,10 @@ head(animalmodel.ped)
 
 ### 鸣谢
 
-该项目参考了林元震老师的AAfun包
+该项目参考了林元震老师的[AAfun](https://github.com/yzhlinscau/AAfun)包
 
-该项目参考了nadiv包
+该项目参考了[nadiv](https://github.com/matthewwolak/nadiv)包
 
-该项目参考了VSNC公司的VSNR包
+该项目参考了VSNC公司的[VSNR](https://github.com/VSNC/VSNR)包
 
 特此鸣谢。
