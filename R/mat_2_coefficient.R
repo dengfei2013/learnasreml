@@ -9,6 +9,7 @@
 #' 1+1
 
 mat_2_coefficient = function(A_mat){
+  A_mat = as.matrix(A_mat)
   n = dim(A_mat)[1]
   re = matrix(0,n,n)
   for( a in 1:n){
