@@ -9,7 +9,6 @@
 #' 1+1
 
 mat_2_coefficient = function(A_mat){
-  A_mat = as.matrix(A_mat)
   n = dim(A_mat)[1]
   re = matrix(0,n,n)
   for( a in 1:n){
@@ -18,7 +17,7 @@ mat_2_coefficient = function(A_mat){
       re[b,a] = re[a,b]
     }
   }
-  row.names(re) = colnames(re) = row.names(A)
+  row.names(re) = colnames(re) = row.names(A_mat)
   id = row.names(re)
   n = dim(re)[1]
   result = data.frame(row = rep(id,each=n),col = rep(id,n),y = as.vector(re))
