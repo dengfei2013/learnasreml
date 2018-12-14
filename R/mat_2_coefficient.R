@@ -20,6 +20,6 @@ mat_2_coefficient = function(A_mat){
   row.names(re) = colnames(re) = row.names(A_mat)
   id = row.names(re)
   n = dim(re)[1]
-  result = data.frame(row = rep(id,each=n),col = rep(id,n),y = as.vector(re))
+  result = data.frame(ID1 = rep(id,each=n),ID2 = rep(id,n),y = round(as.vector(re),5))
   return(result)
 }
