@@ -1,10 +1,10 @@
 Package: learnasreml
 Type: Package
-Title: The package is to help asreml
+Title: The package is to help learn the asreml
 Version: 0.1.0
 Author: Deng fei
 Maintainer: Deng fei <dengfei_2013@163.com>
-Description: The package is to help asreml
+Description: The package is to help learn the asreml
 License: GP3
 Encoding: UTF-8
 LazyData: true
