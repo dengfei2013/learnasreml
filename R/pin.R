@@ -4,7 +4,7 @@
 #' @param transform It is the formula of calculation
 #' @seealso \code{\link{model.comp}} , \code{\link{asreml.lrt}}
 #' @author Dave <Dave@vsni.co.uk>
-#' @examples 
+#' @examples
 #' library(asreml)
 #' data(harvey,package = "asreml")
 #' head(harvey)
@@ -16,15 +16,15 @@
 
 pin <- function(object,transform){
   if(is.null(object)) return("Please choose the asreml object")
-  
+
   pframe <- as.list(object$gammas)
   names(pframe) <- paste("V", seq(1, length(pframe)), sep = "")
   # transform <- h2 ~ V1/(V1+V2+V3)
-  tvalue <- eval(deriv(transform[[length(transform)]], names(pframe)), 
+  tvalue <- eval(deriv(transform[[length(transform)]], names(pframe)),
                  pframe)
   X <- as.vector(attr(tvalue, "gradient"))
   X[object$gammas.type == 1] <- 0
-  tname <- if (length(transform) == 3) 
+  tname <- if (length(transform) == 3)
     transform[[2]]
   else ""
   n <- length(pframe)
