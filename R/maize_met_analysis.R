@@ -22,9 +22,9 @@ maize_met_analysis = function(dat){
   names(aa[[1]])=c("自由度","平方和","均方","F值","p值")
   rownames(aa[[1]]) = c("地点","地点内重复","品种","地点:品种","残差","总和")
   attr(aa,"na.action")=NULL
-  cul_lsd = LSD.test(mod,"Cul")$groups
-  loc_lsd = LSD.test(mod,"Loc")$groups
-  loc.cul_lsd = LSD.test(mod,"Loc.Cul")$groups
+  cul_lsd = LSD_test(mod,"Cul")$groups
+  loc_lsd = LSD_test(mod,"Loc")$groups
+  loc.cul_lsd = LSD_test(mod,"Loc.Cul")$groups
   re = list(aa,cul_lsd,loc_lsd,loc.cul_lsd)
   names(re) = c("anova","cul_lsd","loc_lsd","loc.cul_lsd")
   return(re)

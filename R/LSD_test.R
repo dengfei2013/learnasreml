@@ -8,7 +8,7 @@
 #' library(learnasreml)
 #' data(maize)
 #' mod = aov(yield ~Loc/Rep + Loc*Cul,data=maize)
-#' LSD_test(mod,"Cul")
+#' LSD_test(mod,"Cul")$groups
 
 LSD_test = function (y, trt, DFerror, MSerror, alpha = 0.05, p.adj = c("none",
                                                             "holm", "hommel", "hochberg", "bonferroni", "BH", "BY", "fdr"),
