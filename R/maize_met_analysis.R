@@ -6,7 +6,6 @@
 #'
 #' @examples
 #' library(learnasreml)
-#' library(agricolae)
 #' data("maize")
 #' head(maize)
 #' re = maize_met_analysis(maize)
