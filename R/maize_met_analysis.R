@@ -12,7 +12,7 @@
 #' head(dat)
 #' re = maize_met_analysis(dat)
 #' re
-#' re$anova
+
 
 
 maize_met_analysis = function(dat){
@@ -26,8 +26,16 @@ maize_met_analysis = function(dat){
   # rownames(aa[[1]]) = c("地点","地点内重复","品种","地点:品种","残差","总和")
   # attr(aa,"na.action")=NULL
   cul_lsd = LSD_test(mod,"Cul")$groups
+  cul_lsd$Name = rownames(cul_lsd)
+  cul_lsd = cul_lsd[,c(3,1,2)]
+
   loc_lsd = LSD_test(mod,"Loc")$groups
+  loc_lsd$Name = rownames(loc_lsd)
+  loc_lsd = loc_lsd[,c(3,1,2)]
+
   loc.cul_lsd = LSD_test(mod,"Loc.Cul")$groups
+  loc.cul_lsd$Name = rownames(loc.cul_lsd)
+  loc.cul_lsd = loc.cul_lsd[,c(3,1,2)]
   re = list(aa,cul_lsd,loc_lsd,loc.cul_lsd)
   aa1 = toJSON(aa)
   cul_lsd1 = toJSON(cul_lsd)
