@@ -46,10 +46,10 @@ maize_met_analysis = function(dat,json=TRUE){
     loc_lsd1 = toJSON(loc_lsd)
     loc.cul_lsd1 = toJSON(loc.cul_lsd)
     cv1 = toJSON(cv)
-    re = list(aa1,cul_lsd1,loc_lsd1,loc.cul_lsd1,cv1)
+    re = c(aa1,cul_lsd1,loc_lsd1,loc.cul_lsd1,cv1)
     names(re) = c("anova","cul_lsd","loc_lsd","loc.cul_lsd","cv")
   }else{
-    re = list(aa,cul_lsd,loc_lsd,loc.cul_lsd,cv)
+    re = c(aa,cul_lsd,loc_lsd,loc.cul_lsd,cv)
     names(re) = c("anova","cul_lsd","loc_lsd","loc.cul_lsd","cv")
   }
   return(re)
