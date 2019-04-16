@@ -30,15 +30,15 @@ maize_met_analysis = function(dat,json=TRUE){
   cv = round(sqrt(mse)*100/mean,4)
 
   cul_lsd = LSD_test(mod,"Cul")$groups
-  # cul_lsd$Name = rownames(cul_lsd)
+  cul_lsd$Name = rownames(cul_lsd)
   cul_lsd = cul_lsd[,c(3,1,2)]
 
   loc_lsd = LSD_test(mod,"Loc")$groups
-  # loc_lsd$Name = rownames(loc_lsd)
+  loc_lsd$Name = rownames(loc_lsd)
   loc_lsd = loc_lsd[,c(3,1,2)]
 
   loc.cul_lsd = LSD_test(mod,"Loc.Cul")$groups
-  # loc.cul_lsd$Name = rownames(loc.cul_lsd)
+  loc.cul_lsd$Name = rownames(loc.cul_lsd)
   loc.cul_lsd = loc.cul_lsd[,c(3,1,2)]
   if(json){
     aa1 = toJSON(aa)
