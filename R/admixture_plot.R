@@ -12,4 +12,3 @@
 admixture_plot = function(datQ){
   barplot(t(as.matrix(datQ)),col = rainbow(3),xlab = "Individual",ylab = "Ancestry",border = NA)
 }
-admixture_plot(dd)

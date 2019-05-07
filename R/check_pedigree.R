@@ -4,6 +4,7 @@
 #' @return The structure of the data.
 #' @examples
 #' ped = data.frame(ID=c(1:9,6),sire=c(3,4,4,5,6,4,5,6,3,3),dam=c(11:16,16,13,3,5))
+#' ped
 #' check_pedigree(ped)
 
 
