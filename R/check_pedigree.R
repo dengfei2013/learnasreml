@@ -10,10 +10,9 @@
 #' check_pedigree(ped)
 
 
-check_pedigree <- function(ped,dat){
+check_pedigree <- function(ped,dat=NULL){
   require(tidyverse)
   ped = as.data.frame(ped)
-  dat = as.data.frame(dat)
   ped[ped==0] = NA
   id = ped[,1]
   sire = ped[,2]
@@ -27,8 +26,13 @@ check_pedigree <- function(ped,dat){
   a4 = cat("母本共有个数:", length(unique(sort(dam))),"\n")
   a5 = cat("个体重复数为:", length(id_dup),"个,分别是:",id_dup,"\n")
   a6 = cat("父母本交叉个数为:",length(inte),"个,分别是:",inte,"\n")
-  id_dat = dat[,1]
-  a6 = cat("有表型无系谱个体为：",length(setdiff(id_dat,total)),"个,分别是:",setdiff(id_dat,total),"\n")
-  re = setdiff(id_dat,total)
-  return(re)
+  if(!is.null(dat)){
+    dat = as.data.frame(dat)
+    id_dat = dat[,1]
+    a7 = cat("有表型无系谱个体为：",length(setdiff(id_dat,total)),"个,分别是:",setdiff(id_dat,total),"\n")
+    re = setdiff(id_dat,total)
+    return(re)
+  }
+
+
 }
