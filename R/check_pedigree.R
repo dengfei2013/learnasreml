@@ -33,6 +33,4 @@ check_pedigree <- function(ped,dat=NULL){
     re = setdiff(id_dat,total)
     return(re)
   }
-
-
 }

@@ -13,7 +13,9 @@
 
 
 huizong = function(dd){
-  func <- function(x){c(总观测值个数 = length(x),缺失值个数 = length(x[is.na(x)]),平均数=mean(x,na.rm = T),方差=var(x,na.rm = T),标准差=sd(x,na.rm = T),变异系数=sd(x,na.rm = T)/mean(x,na.rm = T)*100)}
+  func <- function(x){c(Total_num = length(x),Miss_num = length(x[is.na(x)]),
+                        Mean=mean(x,na.rm = T),Variance=var(x,na.rm = T),
+                        SD=sd(x,na.rm = T),CV=sd(x,na.rm = T)/mean(x,na.rm = T)*100)}
   sm <- as.data.frame(t(apply(dd,2,func)))
   return(sm)
 }
