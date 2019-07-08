@@ -7,7 +7,7 @@
 #' as_var_mat(vep4)
 
 
-as_var_mat = function(va){
+va_2_mat = function(va){
   library(stringr)
   library(tidyverse)
   va1 = unlist(strsplit(va,"\\s+"))
@@ -15,7 +15,7 @@ as_var_mat = function(va){
   va1 = as.numeric(va1)
   va_mat = matrix(va1,sqrt(len),byrow = T)
   mat1 = va_mat
-  mat1[lower.tri(mat1)] <- t(mat1)[lower.tri(mat1)]
+  mat1[upper.tri(mat1)] <- t(mat1)[upper.tri(mat1)]
   return(mat1)
 }
 
