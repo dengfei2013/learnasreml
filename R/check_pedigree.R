@@ -3,10 +3,12 @@
 #' @param ped Pedigree that contains: ID, Sire, Dam
 #' @return The structure of the data.
 #' @examples
+#' library(learnasreml)
 #' ped = data.frame(ID=c(1:9,6),sire=c(3,4,4,5,6,4,5,6,3,3),dam=c(11:16,16,13,3,5))
 #' ped
-#' dat = data.frame(ID = c(1:5,10),y = rnorm(6))
-#' dat
+#' check_pedigree(ped)
+#' ped = data.frame(ID = c(1:5,10,0,0),sire=1:8,dam = c(9:15,NA))
+#' ped
 #' check_pedigree(ped)
 
 
@@ -15,8 +17,11 @@ check_pedigree <- function(ped,dat=NULL){
   ped = as.data.frame(ped)
   ped[ped==0] = NA
   id = ped[,1]
+  id = id[!is.na(id)]
   sire = ped[,2]
+  sire = sire[!is.na(sire)]
   dam = ped[,3]
+  dam = dam[!is.na(dam)]
   total = c(id,sire,dam) %>% sort %>% unique()
   id_dup = id[duplicated(id)]
   inte = intersect(sire,dam)
@@ -24,8 +29,18 @@ check_pedigree <- function(ped,dat=NULL){
   a2 = cat("个体共有个数:",length(unique(sort(id))),"\n")
   a3 = cat("父本共有个数:", length(unique(sort(sire))),"\n")
   a4 = cat("母本共有个数:", length(unique(sort(dam))),"\n")
-  a5 = cat("个体重复数为:", length(id_dup),"个,分别是:",id_dup,"\n")
-  a6 = cat("父母本交叉个数为:",length(inte),"个,分别是:",inte,"\n")
+  if(length(id_dup)==0){
+    a5 = cat("个体没有重复！\n")
+  }else{
+    a5 = cat("个体重复数为:", length(id_dup),"个,分别是:",id_dup,"\n")
+
+  }
+  if(length(inte)==0){
+    a6 = cat("父母本个体没有交叉！\n")
+  }else{
+    a6 = cat("父母本交叉个数为:",length(inte),"个,分别是:",inte,"\n")
+
+  }
   if(!is.null(dat)){
     dat = as.data.frame(dat)
     id_dat = dat[,1]
