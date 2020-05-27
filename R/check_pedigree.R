@@ -18,6 +18,7 @@ check_pedigree <- function(ped,dat=NULL){
   }else{
     require(tidyverse)
     ped = as.data.frame(ped)
+    for(i in 1:3) ped[,i] = as.character(ped[,i])
     ped[ped==0] = NA
     id = ped[,1]
     id = id[!is.na(id)]

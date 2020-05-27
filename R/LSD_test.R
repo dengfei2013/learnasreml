@@ -188,5 +188,5 @@ LSD_test = function (y, trt, DFerror, MSerror, alpha = 0.05, p.adj = c("none",
   output <- list(statistics = statistics, parameters = parameters,
                  means = means, comparison = comparison, groups = groups)
   class(output) <- "group"
-  invisible(output)
+  return(output$groups)
 }
