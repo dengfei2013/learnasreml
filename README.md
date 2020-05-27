@@ -3,7 +3,7 @@
 这个软件包, 主要是学习asreml的使用说明包, 包括相关的代码, 数据和模型操作.
 
 ### 上手指南
-这是一个R包，所以能按照R语言的平台，都可以安装learnasreml包。该包在windows10和Centos系统下测试。
+这是一个R包，所以能安装R语言的平台，都可以安装learnasreml包。该包在windows10和Centos系统下测试。
 
 ### 安装步骤
 
