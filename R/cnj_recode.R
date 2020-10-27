@@ -10,7 +10,7 @@
 
 
 cnj_recode <- function(date){
-  require(lubridate)
+  # require(lubridate)
   result = paste0(year(date),quarter(date))
   return(result)
 }
