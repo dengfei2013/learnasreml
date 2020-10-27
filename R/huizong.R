@@ -14,7 +14,10 @@
 
 huizong = function(dd){
   func <- function(x){c(Total_num = length(x),Miss_num = length(x[is.na(x)]),
-                        Mean=mean(x,na.rm = T),Variance=var(x,na.rm = T),
+                        Max = max(x,na.rm = T),
+                        Mean=mean(x,na.rm = T),
+                        Min = min(x,na.rm = T),
+                        Variance=var(x,na.rm = T),
                         SD=sd(x,na.rm = T),CV=sd(x,na.rm = T)/mean(x,na.rm = T)*100)}
   sm <- as.data.frame(t(apply(dd,2,func)))
   return(sm)
