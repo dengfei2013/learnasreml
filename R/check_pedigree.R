@@ -4,7 +4,7 @@
 #' @return The structure of the data.
 #' @examples
 #' library(learnasreml)
-#' ped = data.frame(ID=c(1:9,6),sire=c(3,4,4,5,6,4,5,6,3,3),dam=c(11:16,16,13,3,5))
+#' ped = data.frame(ID=c(1:9,6,"x"),sire=c(3,4,4,5,6,4,5,6,3,3,0),dam=c(11:16,16,13,30,50,0))
 #' ped
 #' check_pedigree(ped)
 #' ped = data.frame(ID = c(1:5,10,0,0),sire=1:8,dam = c(9:15,NA))
@@ -19,6 +19,9 @@ check_pedigree <- function(ped,dat=NULL){
     require(tidyverse)
     ped = as.data.frame(ped)
     for(i in 1:3) ped[,i] = as.character(ped[,i])
+    if(sum(ped[,1] ==0)>0){
+      cat("注意，系谱中ID列有“0”的个体，条数为:", sum(ped[,1]==0),"\n\n\n")
+    }
     ped[ped==0] = NA
     id = ped[,1]
     id = id[!is.na(id)]
