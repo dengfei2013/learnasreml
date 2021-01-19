@@ -50,7 +50,7 @@ check_pedigree <- function(ped,dat=NULL){
     }
     if(!is.null(dat)){
       dat = as.data.frame(dat)
-      id_dat = dat[,1]
+      id_dat = as.character(dat[,1])
       a7 = cat("有表型无系谱个体为：",length(setdiff(id_dat,total)),"个,分别是:",as.character(setdiff(id_dat,total)),"\n")
       re = as.character(setdiff(id_dat,total))
       return(re)
