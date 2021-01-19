@@ -36,20 +36,20 @@ check_pedigree <- function(ped,dat=NULL){
     if(length(id_dup)==0){
       a5 = cat("个体没有重复！\n")
     }else{
-      a5 = cat("个体重复数为:", length(id_dup),"个,分别是:",id_dup,"\n")
+      a5 = cat("个体重复数为:", length(id_dup),"个,分别是:",as.character(id_dup),"\n")
 
     }
     if(length(inte)==0){
       a6 = cat("父母本个体没有交叉！\n")
     }else{
-      a6 = cat("父母本交叉个数为:",length(inte),"个,分别是:",inte,"\n")
+      a6 = cat("父母本交叉个数为:",length(inte),"个,分别是:",as.character(inte),"\n")
 
     }
     if(!is.null(dat)){
       dat = as.data.frame(dat)
       id_dat = dat[,1]
-      a7 = cat("有表型无系谱个体为：",length(setdiff(id_dat,total)),"个,分别是:",setdiff(id_dat,total),"\n")
-      re = setdiff(id_dat,total)
+      a7 = cat("有表型无系谱个体为：",length(setdiff(id_dat,total)),"个,分别是:",as.character(setdiff(id_dat,total)),"\n")
+      re = as.character(setdiff(id_dat,total))
       return(re)
     }
   }
