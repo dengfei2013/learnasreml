@@ -9,7 +9,10 @@
 #' check_pedigree(ped)
 #' ped = data.frame(ID = c(1:5,10,0,0),sire=1:8,dam = c(9:15,NA))
 #' ped
+#' dat = data.frame(ID = 1:20,y = rnorm(20))
+#' dat = data.frame(ID = 1:4,y = rnorm(4))
 #' check_pedigree(ped)
+#' check_pedigree(ped,dat)
 
 
 check_pedigree <- function(ped,dat=NULL){
@@ -51,9 +54,13 @@ check_pedigree <- function(ped,dat=NULL){
     if(!is.null(dat)){
       dat = as.data.frame(dat)
       id_dat = as.character(dat[,1])
-      a7 = cat("有表型无系谱个体为：",length(setdiff(id_dat,total)),"个,分别是:",as.character(setdiff(id_dat,total)),"\n")
-      re = as.character(setdiff(id_dat,total))
-      return(re)
+      if(length(setdiff(id_dat,total)) == 0){
+        a7 = cat("有表型的个体都有系谱记录！\n\n")
+      }else{
+        a7 = cat("有表型无系谱个体为：",length(setdiff(id_dat,total)),"个,分别是:",as.character(setdiff(id_dat,total)),"\n")
+        re = as.character(setdiff(id_dat,total))
+        return(re)
+      }
     }
   }
 
