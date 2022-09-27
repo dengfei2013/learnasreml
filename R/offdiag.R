@@ -12,5 +12,6 @@ offdiag = function(mat){
   a2 = lowerTriangle(mat,byrow = T)
   re = c(a1,a2)
   return(re)
+
 }
 
