@@ -13,7 +13,7 @@ add_ped = function(ped,dat){
   ## ped为系谱数据，为三列
   ## dat为表型数据，第一列为个体ID
   ## 结果为完整的系谱数据，如果表型ID都有系谱记录，系谱不变。如果有表型没有系谱，会进行补充
-
+  ## test
   idtotal = unique(c(ped[,1],ped[,2],ped[,3]))
   del_ID = c(NA,0,"*",".")
   idtotal1 = setdiff(idtotal,del_ID)
